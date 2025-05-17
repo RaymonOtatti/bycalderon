@@ -1,0 +1,541 @@
+/* Reset y tipografía */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #0e0e0e;
+  color: white;
+  font-family: 'Work Sans', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* CONTENEDOR NEGRO */
+.container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  cursor: auto;
+}
+
+.container .gallery {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.container .gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  filter: brightness(0.95);
+}
+
+.container .gallery-img:nth-child(1) {
+  animation: fade 20s infinite;
+  animation-delay: 0s;
+}
+
+.container .gallery-img:nth-child(2) {
+  animation: fade 20s infinite;
+  animation-delay: 5s;
+}
+
+.container .gallery-img:nth-child(3) {
+  animation: fade 20s infinite;
+  animation-delay: 10s;
+}
+
+.container .gallery-img:nth-child(4) {
+  animation: fade 20s infinite;
+  animation-delay: 15s;
+}
+
+@keyframes fade {
+  0% { opacity: 0; }
+  5% { opacity: 1; }
+  25% { opacity: 1; }
+  30% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+.fixed-logo {
+  position: absolute;
+  top: 9%;
+  left: 50%;
+  transform: translateX(-50%);
+  max-height: 40px;
+  max-width: 150px;
+  pointer-events: none;
+  z-index: 20;
+}
+
+.text {
+  font-size: 18px;
+  white-space: nowrap;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  text-transform: uppercase;
+  font-weight: 400;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
+  transition: color 0.3s ease, opacity 0.3s ease;
+  text-decoration: none;
+}
+
+.left {
+  position: absolute;
+  left: 12.5%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.top {
+  position: absolute;
+  left: 37.5%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.side-text {
+  position: absolute;
+  left: 62.5%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.right {
+  position: absolute;
+  right: 12.5%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.text:hover,
+.text:focus {
+  color: #ea0072;
+  outline: none;
+}
+
+/* Menú fijo en la parte superior */
+.fixed-menu {
+  position: fixed;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  background: #3a7bd5; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #000000, #1c1c1c); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #000000, #1c1c1c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  display: none;
+  opacity: 90%;
+  justify-content: center;
+  gap: 40px;
+  padding: 15px 0;
+  z-index: 1000;
+  transition: opacity 0.3s ease;
+}
+
+.fixed-menu .text {
+  position: static;
+  transform: none;
+  padding: 5px 10px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 15px 0;
+  font-size: 14px;
+  color: white;
+  background: #3a7bd5; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #000000, #1c1c1c); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #000000, #1c1c1c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  position: relative;
+  z-index: 15;
+}
+
+footer p {
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 1); /* Stronger shadow for readability */
+}
+
+/* Botón de subir */
+#btnUp {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  font-weight: 600;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 0;
+  z-index: 1100;
+  user-select: none;
+  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+#btnUp.black {
+  border-color: white;
+  color: white;
+}
+
+#btnUp:hover {
+  background-color: white;
+  color: #0e0e0e;
+}
+
+/* SECCIONES */
+#whiteSection, #cruSection {
+  width: 100vw;
+  height: 100vh;
+  background: #3a7bd5; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #000000, #1c1c1c); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #000000, #1c1c1c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  box-sizing: border-box;
+  z-index: 100;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+/* WHITE SECTION: Imagen izquierda, texto derecha */
+#whiteSection .overlay-image {
+  flex: 0 0 40%;
+  height: 70%;
+  position: relative;
+  z-index: 1;
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+}
+
+#whiteSection .overlay-text {
+  flex: 0 0 60%;
+  margin-left: -5%;
+  position: relative;
+  z-index: 2;
+  padding: 20px;
+  color: white;
+  font-family: 'Bell MT Italic', Georgia, serif;
+  font-style: italic;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  text-align: justify;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 1);
+  transform: translateX(100%);
+  opacity: 0;
+  transition: transform 0.8s ease-out 0.2s, opacity 0.8s ease-out 0.2s;
+}
+
+#whiteSection .overlay-image.animate,
+#whiteSection .overlay-text.animate {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* CRU SECTION: Carousel */
+#cruSection {
+  position: relative;
+  padding: 0;
+}
+
+.carousel {
+  width: 100%;
+  height: 80%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-track {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+  height: 100%;
+  padding: 20px 0;
+  scroll-snap-type: x mandatory;
+}
+
+.carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+  flex: 0 0 400px;
+  margin: 0 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  scroll-snap-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 15px;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.card-img {
+  width: 100%;
+  max-height: 60vh;
+  object-fit: contain;
+  flex: 1;
+}
+
+.card h3 {
+  padding: 15px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 400;
+  color: white;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(14, 14, 14, 0.7);
+  border: none;
+  color: white;
+  font-size: 24px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  z-index: 10;
+}
+
+.carousel-btn:hover {
+  background: #ea0072;
+}
+
+.prev {
+  left: 20px;
+}
+
+.next {
+  right: 20px;
+}
+
+/* Imagen común para whiteSection */
+#whiteSection .overlay-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+/* Scrollbar pequeña para las secciones */
+#whiteSection::-webkit-scrollbar, #cruSection::-webkit-scrollbar {
+  width: 7px;
+}
+
+#whiteSection::-webkit-scrollbar-thumb, #cruSection::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+}
+
+/* --- HAMBURGER MENU PARA MOBILE --- */
+@media (max-width: 768px) {
+  /* Ocultar fixedMenu horizontal */
+  .fixed-menu {
+    display: none !important;
+  }
+
+  /* Ocultar botones originales dentro de container */
+  .container .text {
+    display: none;
+  }
+
+  /* Ajustar logo para mobile */
+  .fixed-logo {
+    top: 5%;
+    max-height: 30px;
+    max-width: 120px;
+  }
+
+  /* Estilo del botón hamburguesa */
+  .hamburger {
+    display: block;
+    position: fixed;
+    top: 5%;
+    right: 15px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1300;
+    width: 30px;
+    height: 24px;
+    padding: 0;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: white;
+    margin: 4px 0;
+    transition: all 0.3s ease;
+  }
+
+  .hamburger.open span:nth-child(1) {
+    transform: rotate(45deg) translate(4px, 4px);
+  }
+
+  .hamburger.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+  /* Estilo del menú móvil */
+  #mobileNav {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background: rgba(14, 14, 14, 0.95);
+    padding: 80px 20px 20px;
+    gap: 2rem;
+    z-index: 1200;
+    align-items: center;
+    transition: right 0.3s ease-in-out;
+  }
+
+  #mobileNav.open {
+    right: 0;
+  }
+
+  #mobileNav[aria-hidden="true"] {
+    display: none;
+  }
+
+  #mobileNav[aria-hidden="false"] {
+    display: flex;
+  }
+
+  /* Estilo botones mobileNav */
+  #mobileNav button,
+  #mobileNav a {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
+    transition: color 0.3s ease;
+    text-decoration: none;
+    padding: 10px;
+  }
+
+  #mobileNav a {
+    display: inline-block;
+  }
+
+  #mobileNav button:hover,
+  #mobileNav button:focus,
+  #mobileNav a:hover,
+  #mobileNav a:focus {
+    color: #ea0072;
+    outline: none;
+  }
+
+  /* Ajustar secciones para mobile */
+  #whiteSection, #cruSection {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+  }
+
+  #whiteSection .overlay-image,
+  #whiteSection .overlay-text {
+    flex: 0 0 auto;
+    width: 100%;
+    margin: 0;
+    padding: 15px;
+    font-family: 'Bell MT Italic', Georgia, serif;
+    font-style: italic;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .carousel {
+    width: 100%;
+    height: 100%;
+  }
+
+  .carousel-track {
+    padding: 10px 0;
+  }
+
+  .card {
+    flex: 0 0 90%;
+    margin: 0 10px;
+    padding-bottom: 10px;
+  }
+
+  .card-img {
+    max-height: 50vh;
+    object-fit: contain;
+  }
+
+  .carousel-btn {
+    padding: 8px;
+    font-size: 20px;
+  }
+
+  .prev {
+    left: 10px;
+  }
+
+  .next {
+    right: 10px;
+  }
+}
+
+/* En desktop */
+@media (min-width: 769px) {
+  #mobileNav {
+    display: none;
+  }
+
+  .hamburger {
+    display: none;
+  }
+}
